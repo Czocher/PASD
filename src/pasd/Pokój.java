@@ -5,10 +5,10 @@ import java.util.List;
 
 public class Pokój {
 
-    int piętro;
-    int numer;
-    int pojemność;
-    List<Gość> goście;
+    private int piętro;
+    private int numer;
+    private int pojemność;
+    private List<Gość> goście;
 
     public Pokój() {
         goście = new ArrayList<>();
