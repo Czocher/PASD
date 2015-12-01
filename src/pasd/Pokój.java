@@ -15,7 +15,7 @@ public class Pokój {
         goście = new ArrayList<>();
     }
 
-    boolean zakwateruj(Gość g) {
+    public boolean zakwateruj(Gość g) {
         if (goście.size() <= pojemność) {
             goście.add(g);
             return true;
@@ -23,8 +23,18 @@ public class Pokój {
         return false;
     }
 
-    boolean wyrzuć(Gość g) {
+    public boolean wyrzuć(Gość g) {
         return goście.remove(g);
+    }
+    
+    public Gość znajdźNajstarszegoGościa() {
+        Gość najstarszy = null;
+        for(Gość g : goście) {
+            if(najstarszy == null || najstarszy.getDataUrodzenia().after(g.getDataUrodzenia())) {
+                najstarszy = g;
+            }
+        }
+        return najstarszy;
     }
 
     public int getPiętro() {
