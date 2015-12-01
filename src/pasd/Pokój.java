@@ -16,7 +16,7 @@ public class Pokój {
     }
 
     public boolean zakwateruj(Gość g) {
-        if (goście.size() <= pojemność) {
+        if (goście.size() < pojemność) {
             goście.add(g);
             return true;
         }
@@ -101,6 +101,11 @@ public class Pokój {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Pok\u00f3j{" + "pi\u0119tro=" + piętro + ", numer=" + numer + ", pojemno\u015b\u0107=" + pojemność + ", go\u015bcie=" + goście + '}';
     }
     
     

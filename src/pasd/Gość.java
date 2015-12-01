@@ -10,6 +10,13 @@ public class Gość {
     private Date dataUrodzenia;
     private String kraj;
 
+    public Gość(String imię, String nazwisko, Date dataUrodzenia, String kraj) {
+        this.imię = imię;
+        this.nazwisko = nazwisko;
+        this.dataUrodzenia = dataUrodzenia;
+        this.kraj = kraj;
+    }
+
     public String getImię() {
         return imię;
     }
@@ -74,6 +81,11 @@ public class Gość {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Go\u015b\u0107{" + "imi\u0119=" + imię + ", nazwisko=" + nazwisko + ", dataUrodzenia=" + dataUrodzenia + ", kraj=" + kraj + '}';
     }
     
     

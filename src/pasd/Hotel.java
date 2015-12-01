@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hotel {
+    
+    private int numer = 0;
 
     private List<Pokój> pokoje;
 
@@ -11,7 +13,7 @@ public class Hotel {
         pokoje = new ArrayList<>();
     }
 
-    boolean zakwateruj(Gość g) {
+    public boolean zakwateruj(Gość g) {
         for (Pokój pokój : pokoje) {
             if (pokój.zakwateruj(g)) {
                 return true;
@@ -20,7 +22,7 @@ public class Hotel {
         return false;
     }
 
-    boolean wyrzuć(Gość g) {
+    public boolean wyrzuć(Gość g) {
         for (Pokój pokój : pokoje) {
             if (pokój.getGoście().remove(g)) {
                 return true;
@@ -29,11 +31,23 @@ public class Hotel {
         return false;
     }
     
-    void dodajPokój(Pokój p) {
-        pokoje.add(p);
+    public Pokój znajdźNajstarszegoGościa() {
+        Pokój pokójZNajstarszym = null;
+        for (Pokój pokój : pokoje) {
+            if(pokójZNajstarszym == null || pokójZNajstarszym.znajdźNajstarszegoGościa().getDataUrodzenia().after(pokój.znajdźNajstarszegoGościa().getDataUrodzenia())) {
+                pokójZNajstarszym = pokój;
+            }
+        }
+        
+        return pokójZNajstarszym;
     }
     
-    void usuńPokój(Pokój p) {
+    public void dodajPokój(Pokój p) {
+        pokoje.add(p);
+        p.setNumer(numer++);
+    }
+    
+    public void usuńPokój(Pokój p) {
         pokoje.remove(p);
     }
 
