@@ -2,8 +2,8 @@ package pasd;
 
 import java.util.Date;
 
-
 public class Gość {
+
     private String imię;
     private String nazwisko;
     private Date dataUrodzenia;
