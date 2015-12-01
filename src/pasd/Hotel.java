@@ -28,6 +28,14 @@ public class Hotel {
         }
         return false;
     }
+    
+    void dodajPokój(Pokój p) {
+        pokoje.add(p);
+    }
+    
+    void usuńPokój(Pokój p) {
+        pokoje.remove(p);
+    }
 
     public List<Pokój> getPokoje() {
         return pokoje;
